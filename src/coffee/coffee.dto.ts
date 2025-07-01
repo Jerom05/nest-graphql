@@ -1,0 +1,13 @@
+import { ObjectType, Field, Int } from '@nestjs/graphql';
+
+@ObjectType()
+export class Coffee {
+  @Field(() => Int)
+  id: number;
+
+  @Field()
+  name: string;
+
+  @Field()
+  brand: string;
+}
