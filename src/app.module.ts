@@ -6,6 +6,7 @@ import { CoffeeResolver } from './coffee/coffee.resolver';
 import { CoffeeService } from './coffee/coffee.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Coffee } from './coffee/coffee.entity';
+import { FlavorModule } from './flavor/flavor.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { Coffee } from './coffee/coffee.entity';
       synchronize: true,
     }),
     TypeOrmModule.forFeature([Coffee]),
+    FlavorModule,
   ],
   providers: [CoffeeResolver, CoffeeService],
 })
