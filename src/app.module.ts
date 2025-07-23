@@ -7,6 +7,7 @@ import { CoffeeService } from './coffee/coffee.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Coffee } from './coffee/coffee.entity';
 import { FlavorModule } from './flavor/flavor.module';
+import { DateScalar } from './common/scalars/date.scalar/date.scalar';
 
 @Module({
   imports: [
@@ -27,6 +28,6 @@ import { FlavorModule } from './flavor/flavor.module';
     TypeOrmModule.forFeature([Coffee]),
     FlavorModule,
   ],
-  providers: [CoffeeResolver, CoffeeService],
+  providers: [CoffeeResolver, CoffeeService, DateScalar],
 })
 export class AppModule {}
