@@ -6,6 +6,7 @@ import { CoffeeResolver } from './coffee/coffee.resolver';
 import { CoffeeService } from './coffee/coffee.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Coffee } from './coffee/coffee.entity';
+import { Flavor } from './flavor/flavor.entity';
 import { FlavorModule } from './flavor/flavor.module';
 import { DateScalar } from './common/scalars/date.scalar/date.scalar';
 
@@ -22,10 +23,10 @@ import { DateScalar } from './common/scalars/date.scalar/date.scalar';
       username: 'user',
       password: 'user',
       database: 'graphql',
-      entities: [Coffee],
+      entities: [Coffee, Flavor],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Coffee]),
+    TypeOrmModule.forFeature([Coffee, Flavor]),
     FlavorModule,
   ],
   providers: [CoffeeResolver, CoffeeService, DateScalar],
