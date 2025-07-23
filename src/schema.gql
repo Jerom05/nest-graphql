@@ -2,12 +2,20 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Flavor {
+  id: Int!
+  name: String!
+}
+
 type Coffee {
   id: Int!
   name: String!
   brand: String!
-  flavors: [String!]!
+  flavors: [Flavor!]!
 }
+
+"""Date custom scalar type"""
+scalar Date
 
 type Query {
   coffees: [Coffee!]!
